@@ -68,27 +68,12 @@ with open(file_to_load) as election_data:
         
         
 #3. Print the total votes.
-# print(total_votes)
+print('Total votes is: ', (total_votes))
 # Print the candidate list
-# print(candidate_options)
+print('List of candidate: ', (candidate_options))
 # Print candidate vote dictionary
-# print(candidate_votes)
-
-# Determine the percentage of votes for each candidate by looping through the counts.
-# 1. Iterate through the candidate list.
-
-
-for candidate in candidate_votes:
-    # Retrieve vote count of a candidate
-    votes = candidate_votes[candidate]
-    # Calculate the % of votes
-    vote_percentage = int(votes) / int(total_votes) * 100
-    #  To do: print out each candidate's name, vote count, and percentage of
-    # votes to the terminal.
+print('Candidate and number of votes: ', (candidate_votes))
     
-
-# Add a vote to that candidate's count
-candidate_votes[candidate_name] += 1
 
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
@@ -101,8 +86,10 @@ with open(file_to_save, "w") as txt_file:
     print(election_results, end="")
     # Save the final vote count to the text file.
     txt_file.write(election_results)
+    # Determine the percentage of votes for each candidate by looping through the counts.
+    # 1. Iterate through the candidate list.
     for candidate in candidate_votes:
-    # Retrieve vote count and %
+        # Retrieve vote count and %
         votes = candidate_votes[candidate]
         vote_percentage = float(votes) / float(total_votes) * 100
         candidate_results = (f"{candidate}: {vote_percentage:.2f}% ({votes:,})\n")
